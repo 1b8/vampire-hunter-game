@@ -1,7 +1,18 @@
 
-// TODO Should not automatically initialise! Data can be taken from localStorage!
+if (player.character === undefined) { // Make sure player.character hasn't been set by save.js
 
-// TODO prompt user for whether they want to be Abraham Lincoln or Mark Twain
-var character = "mark-twain"; // for now just pretend they chose Mark Twain
-// TODO add avatars to imgs/ directory
-document.getElementById("avatar").src = "imgs/" + character + ".png";
+  vhPrompt("Welcome to <cite>Mark Twain, Vampire Hunter: The Game</cite>. Please select a character.", [
+    "Mark Twain", "Abraham Lincoln"
+  ], function (response) {
+    switch (response) {
+      case 0:
+        player.character = "mark-twain";
+        break;
+      case 1:
+        player.character = "abraham-lincoln"
+    }
+    player.updateDisplay();
+  });
+
+  // TODO add avatars to imgs/ directory
+}

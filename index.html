@@ -7,10 +7,7 @@
   <div style="display:none;">
 
     <img id="avatar">
-    <canvas width="" height="" id="canvas">
-      Looks like your browser doesn't support the HTML5 &lt;canvas&gt; tag...<br>
-      You must update or get a different browser to play the game.
-    </canvas>
+    <div id="main"></div>
 
   </div>
   <!--
@@ -22,7 +19,7 @@
   -->
   <script type="text/javascript">
     var files = [
-      'player', 'save', 'main'
+      'player', 'quests', 'prompt', 'save', 'initialise'
     ];
 
     for(var i=0;i<files.length;i++){var s=document.createElement("script");s.src="js/"+files[i]+".js";document.body.appendChild(s)};
