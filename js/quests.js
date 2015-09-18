@@ -12,25 +12,25 @@ function Quest (id, desc, reward) {
   this.reward = reward;
 
   this.percentDone = 0;
-
-  this.start = function() {
-    quests.current[id] = this;
-    quests.updateDisplay();
-  };
-
-  this.finish = function() {
-    quests.complete[id] = this;
-    delete quests.current[id];
-    quests.updateDisplay();
-
-    player.msg("Quest complete!"); // TODO Make message more detailed
-
-    if (typeof this.reward.cash === "number") player.inv.cash += this.reward.cash;
-    if (typeof this.reward.items === "object") {
-      for (var i = 0; i < this.reward.items.length; i++) {
-        player.inv.items.push(this.reward.items[i]);
-      }
-    }
-    
-  };
 }
+
+Quest.prototype.start = function() {
+  quests.current[id] = this;
+  quests.updateDisplay();
+};
+
+Quest.prototype.finish = function() {
+  quests.complete[id] = this;
+  delete quests.current[id];
+  quests.updateDisplay();
+
+  player.msg("Quest complete!"); // TODO Make message more detailed
+
+  if (typeof this.reward.cash === "number") player.inv.cash += this.reward.cash;
+  if (typeof this.reward.items === "object") {
+    for (var i = 0; i < this.reward.items.length; i++) {
+      player.inv.items.push(this.reward.items[i]);
+    }
+  }
+
+};
