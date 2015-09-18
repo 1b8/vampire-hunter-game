@@ -1,5 +1,5 @@
 function setMain(html) {
-  document.getElementById("vh-main").innerHTML = html;
+  document.getElementById("main").innerHTML = html;
 }
 
 var player = {
