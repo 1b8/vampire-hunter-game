@@ -1,3 +1,12 @@
+var main = document.getElementById("main");
+function setMain(html) {
+  main.innerHTML = html;
+}
+
+function addToMan(html) {
+  main.innerHTML += html;
+}
+
 function ItemType(name, price) {
   this.name = name;
   this.price = price;
@@ -20,11 +29,13 @@ function Item(type, edit) {
 }
 
 
-Item.prototype.clone = function() {
-  return new Item(this.type, function(item) {
-    // Copy over the data
-    for (var prop in this) {
-      item[prop] = this[prop];
-    }
-  });
+Item.prototype = {
+  clone: function() {
+    return new Item(this.type, function(item) {
+      // Copy over the data
+      for (var prop in this) {
+        item[prop] = this[prop];
+      }
+    });
+  }
 };

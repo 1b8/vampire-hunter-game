@@ -1,17 +1,7 @@
-function setMain(html) {
-  document.getElementById("main").innerHTML = html;
-}
-
-var player = {
-  msg: function() {
-    // TODO make player.msg() function
-  },
-  inv: {
-    items: [],
-    cash: 0
-  },
-
-  updateDisplay: function() {
-    document.getElementById("avatar").src = "imgs/" + this.character + ".png";
-  }
+var player = new FriendlyAttacker(50, [], 0); // (health, inv, cash)
+player.msg = function() {
+  // TODO make player.msg() function
+};
+player.updateDisplay = function() {
+  document.getElementById("avatar").src = "imgs/" + this.character + ".png";
 };
