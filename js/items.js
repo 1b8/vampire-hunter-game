@@ -25,7 +25,7 @@ function Item(type, edit) {
     this[item] = c[item];
   }
 
-  if (edit !== undefined) edit(this);
+  if (typeof edit !== "undefined") edit(this);
 }
 
 

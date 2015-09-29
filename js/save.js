@@ -16,10 +16,10 @@ if (localStorage) {
       current = current[split[i]];
     }
 
-    if (newVal !== undefined) {
+    if (typeof newVal !== "undefined") {
       current[last] = newVal;
     }
-    
+
     return current[last];
   }
 
@@ -31,7 +31,7 @@ if (localStorage) {
   }
 
   var firstItem = localStorage.getItem(storePre + dataToSave[0]);
-  if (firstItem !== undefined) { // Use the first item to check if there's saved data
+  if (typeof firstItem !== "undefined") { // Use the first item to check if there's saved data
     player.msg("Loading saved game...");
     // Load data from localStorage
     dotNotation(dataToSave[0], firstItem); // Use the firstItem already in memory
