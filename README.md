@@ -13,9 +13,13 @@ what the map might look like:
 And in text adventure mode, it'll look something like this:
 
 There is an egg on the table.
+
 [[Throw the egg out the window](#)]
+
 [[Eat the egg](#)]
+
 [[Drill through the table](#)]
+
 [[Attack the wall](#)]
 
 You throw the egg out the window! It just so happens to hit the Taylor Swift
@@ -24,7 +28,9 @@ vampire! You destroyed Taylor Swift!
 etc.
 
 And here are some icons we can use:
-![Tree and house icons](http://imgur.com/wDaKxXv,QlBzyIf#0)
+
+![Forest icon](http://i.imgur.com/wDaKxXv.png)
+![Village icon](http://i.imgur.com/QlBzyIf.png)
 
 The evil vampires will be:
 * Jane Austen
