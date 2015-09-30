@@ -28,9 +28,9 @@ Quest.prototype = {
     player.msg("Quest complete!"); // TODO Make message more detailed
 
     if (typeof this.reward.cash === "number") player.inv.cash += this.reward.cash;
-    if (typeof this.reward.items === "object") {
-      for (var i = 0; i < this.reward.items.length; i++) {
-        player.inv.items.push(this.reward.items[i]);
+    if (typeof this.reward === "object") {
+      for (var i = 0; i < this.reward.length; i++) {
+        player.inv.push(this.reward.items[i]);
       }
     }
   }

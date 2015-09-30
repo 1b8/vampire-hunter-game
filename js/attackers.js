@@ -26,7 +26,7 @@ Attacker.prototype = {
 
   startAttack: function(defender) {
     if (defender.isPlayer) {
-      setMain("A wild " + this.name + " has appeared!");
+      util.setMain("A wild " + this.name + " has appeared!");
     }
 
     /*

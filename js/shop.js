@@ -4,14 +4,14 @@ function Shop(items) {
 
 Shop.prototype = {
   show: function() {
-    var table = document.createElement("TABLE");
+    var table = util.$n("TABLE");
 
     for (var i = 0; i < this.items.length; i++) {
-      var tr = document.createElement("TR");
+      var tr = util.$n("TR");
       var itemRow = this.items[i];
 
       for (var j = 0; j < itemRow.length; i++) {
-        var td = document.createElement("TD");
+        var td = util.$n("TD");
         var item = itemsRow[j];
 
         td.innerHTML = '<a href="#" onclick="shop.buy(' + i + ',' + j + ');">[' + item.name + ']</a>'; // TODO Add stats & price, maybe add images?

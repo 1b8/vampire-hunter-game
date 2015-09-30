@@ -1,12 +1,3 @@
-var main = document.getElementById("main");
-function setMain(html) {
-  main.innerHTML = html;
-}
-
-function addToMan(html) {
-  main.innerHTML += html;
-}
-
 function ItemType(name, price) {
   this.name = name;
   this.price = price;

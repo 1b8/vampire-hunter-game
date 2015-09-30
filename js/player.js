@@ -1,7 +1,7 @@
 var player = new FriendlyAttacker(50, [], 0); // (health, inv, cash)
-player.msg = function() {
-  // TODO make player.msg() function
-};
+
+// player.msg moved to prompt.js
+
 player.updateDisplay = function() {
-  document.getElementById("avatar").src = "imgs/" + this.character + ".png";
+  util.$("avatar").src = "imgs/" + (this.character ? this.character : "unknown") + ".png";
 };
