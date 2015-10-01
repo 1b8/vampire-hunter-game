@@ -5,3 +5,6 @@ Vision decreased by .5
 Strategy increased by 2
 
 Or something
+
+
+Coward, toxicity, karma statistics
