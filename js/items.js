@@ -3,7 +3,7 @@ function setMain(html) {
   main.innerHTML = html;
 }
 
-function addToMan(html) {
+function addToMain(html) {
   main.innerHTML += html;
 }
 
@@ -13,7 +13,7 @@ function ItemType(name, price) {
 }
 
 var itemTypes = {
-  testItem: new ItemType("Test Item!", 500);
+  testItem: new ItemType("Test Item!", 500)
 };
 
 function Item(type, edit) {

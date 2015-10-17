@@ -1,12 +1,16 @@
 if (localStorage) {
-  var storePre = "vh_";
+  var storeVarName = "vhData";
 
   var dataToSave = [
-    "player.character"
+    "player.character",
+    {
+      get: "player.getHealth",
+      set: "player.setHealth"
+    }
   ];
 
-  function dotNotation(str, newVal) {
-    var split = str.split(".");
+  function dotNotation(path, newVal) {
+    var split = path.split(".");
     var current = window;
     var last = split[split.length-1];
 
@@ -16,28 +20,33 @@ if (localStorage) {
       current = current[split[i]];
     }
 
-    if (newVal !== undefined) {
+    if (typeof newVal !== "undefined") {
       current[last] = newVal;
     }
-    
     return current[last];
   }
 
   function save() {
+    var data = {};
     for (var i = 0; i < dataToSave.length; i++) {
       var key = dataToSave[i];
-      localStorage.setItem(storePre + key, dotNotation(key));
+
+      if (typeof key === "string") data[key] = dotNotation(key);
+      else data[key] = (dotNotation(key.get))();
     }
+    localStorage.setItem(storeVarName, JSON.stringify(data));
   }
 
-  var firstItem = localStorage.getItem(storePre + dataToSave[0]);
-  if (firstItem !== undefined) { // Use the first item to check if there's saved data
+  var data = JSON.parse(localStorage.getItem(storeVarName));
+
+  if (data) {
     player.msg("Loading saved game...");
+
     // Load data from localStorage
-    dotNotation(dataToSave[0], firstItem); // Use the firstItem already in memory
-    for (var i = 1; i < dataToSave.length; i++) {
+    for (var i = 0; i < dataToSave.length; i++) {
       var key = dataToSave[i];
-      dotNotation(key, localStorage.getItem(storePre + key));
+      if (typeof key === "string") dotNotation(key, data[key]);
+      else (dotNotation(key.set))(data[key]);
     }
   }
 
