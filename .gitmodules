@@ -1,3 +1,6 @@
 [submodule "_layouts"]
 	path = _layouts
 	url = https://gist.github.com/336d8f2ea93b695c7b6b.git
+[submodule "_includes"]
+	path = _includes
+	url = https://gist.github.com/1b8/1106e69de1157c51c3ee
