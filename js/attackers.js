@@ -1,15 +1,12 @@
-function Attacker(health, inv, cash) {
-  // "health" is handled by Attacker.prototype.getHealth() and Attacker.prototype.setHealth()
+function Attacker(health, inv, cash, stats) {
   this.inv = inv;
   this.inv.cash = cash;
-  this.isPlayer = false;
-}
+  this.stats = typeof stats === "undefined" ? {} : stats;
 
-Attacker.prototype = {
-
-  getHealth: function() {return health;},
-
-  setHealth: function(newHealth, source) {
+  // Getter and setter for health, as the constructor function's local variable
+  // cannot be accessed from the prototype assignment statement directly below.
+  this.getHealth = function() {return health;}
+  this.setHealth = function(newHealth, source) {
     if (this.isPlayer) {
       var msgEnd;
       if (newHealth < health) {
@@ -22,7 +19,10 @@ Attacker.prototype = {
       this.msg("The " + source.name + " " + msgEnd);
     }
     health = newHealth;
-  },
+  }
+}
+
+Attacker.prototype = {
 
   startAttack: function(defender) {
     if (defender.isPlayer) {
