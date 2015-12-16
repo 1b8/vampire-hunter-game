@@ -9,5 +9,5 @@ player.msg = function() {
 player.updateDisplay = function() {
   // TODO Also update stats (constitution, etc.) and experience (this.xp) level
 
-  util.$("avatar").src = "imgs/" + (this.character ? this.character : "unknown") + ".png";
+  page.el("avatar").src = "imgs/" + (this.character ? this.character : "unknown") + ".png";
 };

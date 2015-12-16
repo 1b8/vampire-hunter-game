@@ -24,7 +24,7 @@ function Attacker(health, inv, cash, stats) {
 
 Attacker.prototype.startAttack = function(defender) {
   if (defender.isPlayer) {
-    util.setMain("A wild " + this.name + " has appeared!");
+    page.main = "A wild " + this.name + " has appeared!";
   }
 
   /* TODO attack prompt player....... */
