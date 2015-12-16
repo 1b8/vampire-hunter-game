@@ -27,9 +27,7 @@ Quest.prototype.finish = function() {
   player.msg("Quest complete!"); // TODO Make message more detailed
 
   if (typeof this.reward.cash === "number") player.inv.cash += this.reward.cash;
-  if (typeof this.reward.items === "object") {
-    for (var i = 0; i < this.reward.items.length; i++) {
+  if (typeof this.reward.items === "object")
+    for (var i = 0; i < this.reward.items.length; i++)
       player.inv.items.push(this.reward.items[i]);
-    }
-  }
 };

@@ -6,5 +6,14 @@ function vhPrompt(question, options, response) {
     html += '<br><a href="#" onclick="promptResponse(\'' + i + '\');">[' + options[i] + ']</a>';
   }
   promptResponse = response;
-  setMain(html);
+  util.setMain(html);
 }
+
+var msgs = util.$("msgs");
+
+player.msg = function(msg) {
+  // Put the msg (wrapped in <p></p>) on the top of the msg list
+  var el = util.$n("P");
+  el.appendChild(document.createTextNode(msg));
+  msgs.insertBefore(el, msgs.childNodes[0]);
+};

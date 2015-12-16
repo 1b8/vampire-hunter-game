@@ -8,6 +8,7 @@
 
     <img id="avatar">
     <div id="main"></div>
+    <div id="msgs"></div>
 
   </div>
   <!--
@@ -19,7 +20,7 @@
   -->
   <script type="text/javascript">
     var files = [
-      'items', 'attackers', 'player', 'quests', 'prompt', 'shop', 'save', 'initialise'
+      'util', 'items', 'attackers', 'player', 'quests', 'prompt', 'shop', 'save', 'init'
     ];
 
     for(var i=0;i<files.length;i++){var s=document.createElement("script");s.src="js/"+files[i]+".js";document.body.appendChild(s)};

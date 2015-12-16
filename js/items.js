@@ -1,12 +1,3 @@
-var main = document.getElementById("main");
-function setMain(html) {
-  main.innerHTML = html;
-}
-
-function addToMain(html) {
-  main.innerHTML += html;
-}
-
 function ItemType(name, price) {
   this.name = name;
   this.price = price;
@@ -25,7 +16,7 @@ function Item(type, edit) {
     this[item] = c[item];
   }
 
-  if (edit !== undefined) edit(this);
+  if (edit) edit(this);
 }
 
 

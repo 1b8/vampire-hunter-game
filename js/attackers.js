@@ -1,7 +1,7 @@
 function Attacker(health, inv, cash, stats) {
   this.inv = inv;
   this.inv.cash = cash;
-  this.stats = typeof stats === "undefined" ? {} : stats;
+  this.stats = stats ? stats : {};
 
   // Getter and setter for health, as the constructor function's local variable
   // cannot be accessed outside the constructor's scope
@@ -24,13 +24,12 @@ function Attacker(health, inv, cash, stats) {
 
 Attacker.prototype.startAttack = function(defender) {
   if (defender.isPlayer) {
-    setMain("A wild " + this.name + " has appeared!");
+    util.setMain("A wild " + this.name + " has appeared!");
   }
 
   /* TODO attack prompt player....... */
 
 };
-
 
 // NOTE: The constructors are automatically set to "Attacker"
 
