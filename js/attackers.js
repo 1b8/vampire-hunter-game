@@ -4,8 +4,8 @@ function Attacker(health, inv, cash, stats) {
   this.stats = typeof stats === "undefined" ? {} : stats;
 
   // Getter and setter for health, as the constructor function's local variable
-  // cannot be accessed from the prototype assignment statement directly below.
-  this.getHealth = function() {return health;}
+  // cannot be accessed outside the constructor's scope
+  this.getHealth = function() {return health;};
   this.setHealth = function(newHealth, source) {
     if (this.isPlayer) {
       var msgEnd;
@@ -19,21 +19,15 @@ function Attacker(health, inv, cash, stats) {
       this.msg("The " + source.name + " " + msgEnd);
     }
     health = newHealth;
-  }
+  };
 }
 
-Attacker.prototype = {
-
-  startAttack: function(defender) {
-    if (defender.isPlayer) {
-      setMain("A wild " + this.name + " has appeared!");
-    }
-
-    /*
-    Not sure how to do this...
-    TODO attack prompt player.......
-    */
+Attacker.prototype.startAttack = function(defender) {
+  if (defender.isPlayer) {
+    setMain("A wild " + this.name + " has appeared!");
   }
+
+  /* TODO attack prompt player....... */
 
 };
 

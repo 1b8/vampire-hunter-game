@@ -1,5 +1,5 @@
 
-if (player.character === undefined) { // Make sure player.character hasn't been set by save.js
+if (!player.character) { // Make sure player.character hasn't been set by save.js
 
   vhPrompt("Welcome to <cite>Mark Twain, Vampire Hunter: The Game</cite>. Please select a character.", [
     "Mark Twain", "Abraham Lincoln"
