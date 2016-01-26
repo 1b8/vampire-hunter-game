@@ -6,5 +6,5 @@ module.exports = function (question, options, response) {
     html += '<br><a href="#" onclick="promptResponse(\'' + i + '\');">[' + options[i] + ']</a>';
   }
   promptResponse = response;
-  page.main = html;
+  require('./page').main = html;
 }

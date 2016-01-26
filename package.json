@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "main": "js/init",
   "dependencies": {
+    "brfs": "^1.4.3",
     "markov": "0.0.7"
   }
 }

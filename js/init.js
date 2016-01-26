@@ -1,4 +1,7 @@
 var player = require('./player');
+var vhPrompt = require('./prompt');
+
+require('./quotes')
 
 if (!player.character) { // Make sure player.character hasn't been set by save.js
 

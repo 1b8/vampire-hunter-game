@@ -1,8 +1,6 @@
 // No need to install jQuery...
 
-var main = page.el('main');
-
-module.exports = {
+var page = module.exports = {
 
   el: function (id) {
     return document.getElementById(id);
@@ -25,3 +23,5 @@ module.exports = {
   }
 
 };
+
+var main = page.el('main');
