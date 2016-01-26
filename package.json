@@ -1,0 +1,8 @@
+{
+  "name": "mtvh",
+  "version": "0.0.0",
+  "main": "js/init",
+  "dependencies": {
+    "markov": "0.0.7"
+  }
+}

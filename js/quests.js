@@ -1,10 +1,12 @@
-var quests = {
+var quests = module.exports = {
   current: {},
   complete: {},
 
   updateDisplay: function() {
     // TODO Add updateDisplay() function to update list on screen
-  }
+  },
+
+  Quest: Quest
 };
 
 function Quest (id, desc, reward) {

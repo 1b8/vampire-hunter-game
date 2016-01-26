@@ -9,24 +9,7 @@ if (localStorage) {
     }
   ];
 
-  function dotNotation(path, newVal) {
-    var split = path.split(".");
-    var current = window;
-    var last = split[split.length-1];
-
-    // Only go up to before the last item;
-    // "current = newVal" would only set the reference otherwise
-    for (var i = 0; i < split.length-1; i++) {
-      current = current[split[i]];
-    }
-
-    if (typeof newVal !== "undefined") {
-      current[last] = newVal;
-    }
-    return current[last];
-  }
-
-  function save() {
+  module.exports = function () {
     var data = {};
     for (var i = 0; i < dataToSave.length; i++) {
       var key = dataToSave[i];
@@ -35,6 +18,22 @@ if (localStorage) {
       else data[key] = (dotNotation(key.get))();
     }
     localStorage.setItem(storeVarName, JSON.stringify(data));
+  };
+
+  function dotNotation(path, newVal) {
+    var split = path.split(".");
+    var current = window;
+    var last = split[split.length-1];
+
+    // Only go up to before the last item;
+    // "current = newVal" would only set the reference otherwise
+    for (var i = 0; i < split.length-1; i++)
+      current = current[split[i]];
+
+    if (typeof newVal !== "undefined")
+      current[last] = newVal;
+
+    return current[last];
   }
 
   var data = JSON.parse(localStorage.getItem(storeVarName));
@@ -52,4 +51,5 @@ if (localStorage) {
 
 } else {
   player.msg("WARNING: Your browser does not support HTML5 web storage! You will not be able to save your game unless you update your browser (or get a different one)!");
+  module.exports = function () {};
 }

@@ -1,3 +1,7 @@
+module.exports = Attacker;
+Attacker.Hostile = HostileAttacker;
+Attacker.Friendly = FriendlyAttacker;
+
 function Attacker(health, inv, cash, stats) {
   this.inv = inv;
   this.inv.cash = cash;

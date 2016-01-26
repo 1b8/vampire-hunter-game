@@ -1,3 +1,4 @@
+module.exports = Shop;
 function Shop(items) {
   this.items = items;
 }

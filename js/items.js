@@ -1,10 +1,13 @@
-function ItemType(name, price) {
+module.exports = Item;
+Item.types = itemTypes;
+
+function Type(name, price) {
   this.name = name;
   this.price = price;
 }
 
 var itemTypes = {
-  testItem: new ItemType("Test Item!", 500)
+  testItem: new Type("Test Item!", 500)
 };
 
 function Item(type, edit) {
